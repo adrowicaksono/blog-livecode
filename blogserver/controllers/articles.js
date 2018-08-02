@@ -4,15 +4,12 @@ const jwt = require('jsonwebtoken')
 const get = function(req, res){
     Article
     .find()
-    .then(function(articles){
-        res
-            .status(200)
-            .json(articles)
-    })
-    .catch(function(err){
-        res
-            .status(400)
-    })
+    .populate('authorId')
+    .exec(function (err, respons) {
+        if (err) res.status(400);
+        res.status(200).json(respons);
+      });
+      
 }
 
 const add = function(req, res){
