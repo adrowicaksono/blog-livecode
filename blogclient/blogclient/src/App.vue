@@ -28,3 +28,16 @@
   }
 }
 </style>
+<script>
+export default {
+  data(){
+    return{
+      isLogin : true
+    }
+  }
+  // methods:{
+
+  // }
+}
+</script>
+
